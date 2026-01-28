@@ -1,0 +1,214 @@
+/* src/styles/Hero.css */
+.hero-container {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 5% 40px;
+  position: relative;
+}
+
+.hero-content-split {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* LADO DE LA IMAGEN */
+.hero-image-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 450px;
+}
+
+.hero-image {
+  width: 100%;
+  /* Eliminamos border y box-shadow para que no se vea el cuadrado de la foto */
+  border: none; 
+  box-shadow: none;
+  
+  filter: grayscale(10%) contrast(1.1);
+
+  /* MÁSCARA DE HUMO PRO */
+  /* Usamos un degradado radial para suavizar bordes laterales y uno lineal para la base */
+  -webkit-mask-image: 
+    radial-gradient(circle at center, black 30%, rgba(0,0,0,0.5) 60%, transparent 90%),
+    linear-gradient(to bottom, black 50%, transparent 95%);
+  mask-image: 
+    radial-gradient(circle at center, black 30%, rgba(0,0,0,0.5) 60%, transparent 90%),
+    linear-gradient(to bottom, black 50%, transparent 95%);
+    
+  /* Combinamos ambas máscaras */
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.availability-badge {
+  position: absolute;
+ bottom: 43.5px; 
+  right: -5px;
+  background: rgba(10, 15, 30, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #10b981; /* Verde esmeralda */
+
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+ 
+  z-index: 1;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulse 2s infinite;
+}
+.availability-badge:hover {
+  background: rgba(16, 185, 129, 0.1); 
+  border-color: #10b981; /* Borde verde sólido */
+  transform: translateY(-2px);
+  cursor: pointer;
+
+  /* Iluminado sencillo (Glow directo) */
+  /* Solo dos sombras: una para el brillo del borde y otra para el aura sutil */
+  box-shadow: 
+    0 0 12px rgba(16, 185, 129, 0.5), 
+    0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+
+/* LADO DEL TEXTO */
+.hero-text-side {
+  flex: 1.2;
+  text-align: left;
+}
+
+/* Estado base */
+.award-badge {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px 14px;
+  border-radius: 90px;
+  font-size: 0.90rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-slate);
+  margin-bottom: 20px;
+  display: inline-block;
+  /* Borde base casi invisible */
+  border: 1px solid rgba(255, 255, 255, 0.05); 
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+/* Hover: Solo un susurro de color en el borde */
+.award-badge:hover {
+  color: #ffcc00;
+  
+  /* Borde bajado al 0.1 de opacidad: casi nada */
+  border-color: rgba(255, 204, 0, 0.2); 
+  
+  /* Iluminación de la letra se mantiene para la legibilidad */
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.9);
+  
+  /* Quitamos el box-shadow exterior para que el borde no resalte */
+  box-shadow: none; 
+  
+  background: rgba(255, 204, 0, 0.01); 
+}
+.hero-description {
+  color: var(--text-slate);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+
+
+/* src/styles/Hero.css */
+
+.hero-actions {
+  display: flex;
+  gap: 15px; /* Espacio entre iconos */
+  margin-top: 10px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-slate);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text-white); /* El icono se ilumina en blanco */
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px); /* Salto sutil */
+  
+  /* Un brillo muy suave debajo */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Opcional: Si quieres que cada uno brille con su color de marca al hacer hover */
+.social-icon:hover .lucide-linkedin { color: #0077b5; }
+.social-icon:hover .lucide-github { color: #fff; }
+.social-icon:hover .lucide-instagram { color: #e1306c; }
+.social-icon:hover .lucide-mail { color: #ffcc00; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVIDAD */
+@media (max-width: 968px) {
+  .hero-content-split {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-text-side {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
