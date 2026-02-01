@@ -1,0 +1,12 @@
+/* Agrega esto al principio de tu archivo CSS principal */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; /* Esto mata el movimiento lateral por completo */
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  overflow-x: hidden;
+  width: 100%;
+}
