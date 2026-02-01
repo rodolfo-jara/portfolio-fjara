@@ -190,20 +190,46 @@
 
 
 
-/* RESPONSIVIDAD */
+/* RESPONSIVIDAD AJUSTADA PARA MÓVIL */
 @media (max-width: 968px) {
+  .hero-container {
+    padding: 80px 20px 40px; /* Reducimos padding superior y damos espacio lateral */
+    overflow-x: hidden; /* Evita que nada se salga de lado */
+  }
+
   .hero-content-split {
     flex-direction: column;
     text-align: center;
+    gap: 30px; /* Reducimos el espacio entre foto y texto */
+    width: 100%;
   }
+
+  .hero-image-wrapper {
+    max-width: 300px; /* Hacemos la foto un poco más pequeña en móvil */
+    margin: 0 auto;   /* Centrado horizontal forzado */
+  }
+
   .hero-text-side {
+    width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Centra el badge, el título y el texto */
   }
+
+  .hero-title {
+    font-size: 2.2rem; /* Ajustamos el tamaño para que no rompa el diseño */
+    width: 100%;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    padding: 0 10px; /* Espacio para que el texto no toque los bordes */
+  }
+
   .hero-actions {
     justify-content: center;
+    width: 100%;
   }
 }
 
