@@ -21,7 +21,7 @@ function Hero() {
           <div className="award-badge">✦ Software Engineer</div>
           <h1 className="hero-title"> <br />
             <span className="text-gradient-blue">Full Stack</span> <br />
-            <span className="text-gradient-purple">systems</span>
+            <span className="text-gradient-purple">system</span>
           </h1>
           <p className="hero-description">
            Especializado en el desarrollo de aplicaciones de extremo a extremo, 
