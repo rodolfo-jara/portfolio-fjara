@@ -19,8 +19,7 @@ function Hero() {
 
         <div className="hero-text-side">
           <div className="award-badge">✦ Software Engineer</div>
-          <h1 className="hero-title">
-            Crafting Digital <br />
+          <h1 className="hero-title"> <br />
             <span className="text-gradient-blue">Full Stack</span> <br />
             <span className="text-gradient-purple">Eco-systems.</span>
           </h1>
